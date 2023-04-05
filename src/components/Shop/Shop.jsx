@@ -10,6 +10,10 @@ const Shop = () => {
             .then(data => setProducts(data));
     }, [])
 
+    const handler = (props)=>{
+        // console.log(props)
+    }
+
     return (
         <div className='shop-container'>
             <div className="products-container">
@@ -17,11 +21,12 @@ const Shop = () => {
                     products.map(product => <Product
                         key={product.id}
                         product={product}
+                        handler = {handler}
                     ></Product>)
                 }
             </div>
-            <div className="order">
-                <h2>this is order container</h2>
+            <div className="order-summary">
+                <h2>Order Summary</h2>
             </div>
         </div>
     );

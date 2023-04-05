@@ -3,12 +3,21 @@
     grid-template-columns: 4fr 1fr;
 }
 .products-container{
-    border: 1px solid black;
-    margin: 0 10px;
+    /* border: 1px solid black; */
+    margin: 0 0px;
 }
 .products-container{
     display: grid;
     grid-template-columns: repeat(3,  1fr);
     /* gap: 30px; */
-    margin: 50px 50px 10px;
+    margin: 50px 30px 10px;
+}
+.order-summary{
+    background-color: #FFE0B2;
+    border: 1px solid black;
+    margin: 50px 0px  0px 0px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    height: 800px;
 }
