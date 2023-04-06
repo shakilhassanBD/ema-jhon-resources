@@ -8,16 +8,25 @@ const Shop = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('products.json')
-        .then(res => res.json())
-        .then(data => setProducts(data));
+            .then(res => res.json())
+            .then(data => setProducts(data));
     }, [])
-    
+
     const [cart, setCart] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         const storedCart = getShoppingCart();
-        console.log(storedCart);
-    },[])
+        for (const id in storedCart) {
+            const addedProduct = products.find(product => product.id === id);
+
+            if (addedProduct) {
+                const quantity = storedCart[id];
+                addedProduct.quantity = quantity;
+                console.log(quantity);
+
+            }
+        };
+    }, [products])
 
     const handler = (product) => {
         const newCart = [...cart, product];
