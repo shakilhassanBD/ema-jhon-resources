@@ -19,13 +19,14 @@ const Shop = () => {
         for (const id in storedCart) {
             const addedProduct = products.find(product => product.id === id);
 
+            const savedCart = [];
             if (addedProduct) {
                 const quantity = storedCart[id];
                 addedProduct.quantity = quantity;
-                console.log(quantity);
-
+                savedCart.push(addedProduct);
             }
         };
+        setCart(savedCart);
     }, [products])
 
     const handler = (product) => {
