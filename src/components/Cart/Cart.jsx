@@ -6,6 +6,8 @@ const Cart = ({ cart }) => { //option 3... will use frequently
     // console.log(cart)
     // const {cart} = props; //option two.
     // console.log(cart);
+
+
     let total = 0;
     let totalShipping = 0;
     let totalTax = 0;
